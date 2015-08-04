@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyGoing.HtmlBuilder", "EasyGoing.HtmlBuilder\EasyGoing.HtmlBuilder.csproj", "{7B4EE10E-6AEB-424F-85FB-A1222948D682}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyGoing.HtmlBuilder.Tests", "EasyGoing.HtmlBuilder.Tests\EasyGoing.HtmlBuilder.Tests.csproj", "{51FFE220-9AB7-4435-B613-C7157976E703}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B4EE10E-6AEB-424F-85FB-A1222948D682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B4EE10E-6AEB-424F-85FB-A1222948D682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B4EE10E-6AEB-424F-85FB-A1222948D682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B4EE10E-6AEB-424F-85FB-A1222948D682}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51FFE220-9AB7-4435-B613-C7157976E703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51FFE220-9AB7-4435-B613-C7157976E703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51FFE220-9AB7-4435-B613-C7157976E703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51FFE220-9AB7-4435-B613-C7157976E703}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
