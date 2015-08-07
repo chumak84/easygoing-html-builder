@@ -20,5 +20,41 @@ namespace EasyGoing.HtmlBuilder.Tests
 
             Assert.AreEqual(expected, actual);
         }
-    }
+        [Test]
+        public void AddClass_GetString_ReturnsTagWithClassAtribute()
+        {
+            Body b = new Body();
+            b.AddClass("classname");
+
+            string html = b.GetString();
+            string expected = "<body class=\"classname\"></body>";
+
+            Assert.AreEqual(expected, html);
+        }
+
+        public void AddAnoherClass_GetString_ReturnsTagWithClassAtribute()
+        {
+            Body b = new Body();
+            b.AddClass("other");
+
+            string html = b.GetString();
+            string expected = "<body class=\"other\"></body>";
+
+            Assert.AreEqual(expected, html);
+        }
+
+        [Test]
+        public void AddTwoClasses_GetString_RetuwnsTagWithTwoClasses()
+        {
+            Body b = new Body();
+            b.AddClass("one");
+            b.AddClass("two");
+
+            string html = b.GetString();
+            string expected = "<body class=\"one two\"></body>";
+            Assert.AreEqual(expected, html);
+
+        }
+
+    } 
 }
