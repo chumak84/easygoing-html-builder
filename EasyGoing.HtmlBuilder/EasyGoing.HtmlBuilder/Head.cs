@@ -11,5 +11,9 @@ namespace EasyGoing.HtmlBuilder
         {
             sb.AppendFormat("<head><title>{0}</title></head>", Title);
         }
+        public string GetString()
+        {
+            return "<head></head>";
+        }
     }
 }
