@@ -56,5 +56,30 @@ namespace EasyGoing.HtmlBuilder.Tests
 
         }
 
-    } 
+        [Test]
+        public void AddAttribute_GetString_TagWithAttribute()
+        {
+            Body b = new Body();
+            b.AddAttribute("attname", "val");
+            string html = b.GetString();
+
+            string expected = "<body attname=\"val\"></body>";
+            Assert.AreEqual(expected, html);
+        }
+
+        [Test]
+        public void AddTWoAttributes_GetString_TagWithAttributes()
+        {
+            Body b = new Body();
+            b.AddAttribute("first", "val1");
+            b.AddAttribute("second", "val2");
+            string html = b.GetString();
+
+            string expected = "<body first=\"val1\" second=\"val2\"></body>";
+            Assert.AreEqual(expected, html);
+
+        }
+
+
+    }
 }
