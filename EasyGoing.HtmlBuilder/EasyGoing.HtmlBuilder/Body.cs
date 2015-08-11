@@ -11,24 +11,24 @@ namespace EasyGoing.HtmlBuilder
 
         public string GetString()
         {
+            string result = "<body";
             if (_classNames.Count > 0)
             {
                 string name = string.Join(" ", _classNames);
-                return "<body class=\"" + name + "\"></body>";
+                result += " class=\"" + name + "\"";
             }
+
             if (_attributes.Count > 0)
             {
-                string result = "<body";
                 foreach (KeyValuePair<string, string> p in _attributes)
                 {
                     result += " " + p.Key;
                     result += "=\"";
                     result += p.Value + "\"";
                 }
-                result += "></body>";
-                return result;
             }
-            return "<body></body>";
+            result += "></body>";
+            return result;
         }
 
         public void AddClass(string classname)
@@ -40,5 +40,7 @@ namespace EasyGoing.HtmlBuilder
         {
             _attributes.Add(attname, val);
         }
+
+
     }
 }

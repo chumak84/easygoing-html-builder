@@ -77,9 +77,33 @@ namespace EasyGoing.HtmlBuilder.Tests
 
             string expected = "<body first=\"val1\" second=\"val2\"></body>";
             Assert.AreEqual(expected, html);
-
         }
 
+        [Test]
+        public void AddClassAddAttribute_GetString_TagWithClassesAndAttributes()
+        {
+            Body b = new Body();
+            b.AddClass("one");
+            b.AddAttribute("first", "val1");
+            string html = b.GetString();
+
+            string expected = "<body class=\"one\" first=\"val1\"></body>";
+            Assert.AreEqual(expected, html);
+        }
+
+        [Test]
+        public void AddTwoClassAddTwoAttribute_GetString_TagWithClassAndAttribute()
+        {
+            Body b = new Body();
+            b.AddClass("one");
+            b.AddClass("two");
+            b.AddAttribute("first", "val1");
+            b.AddAttribute("second", "val2");
+            string html = b.GetString();
+
+            string expected = "<body class=\"one two\" first=\"val1\" second=\"val2\"></body>";
+            Assert.AreEqual(expected, html);
+        }
 
     }
 }
