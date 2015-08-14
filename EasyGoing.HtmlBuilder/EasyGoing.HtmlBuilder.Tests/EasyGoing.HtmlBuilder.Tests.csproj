@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BodyTests.cs" />
+    <Compile Include="DivTests.cs" />
     <Compile Include="HeadTests.cs" />
     <Compile Include="HtmlDocumentTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

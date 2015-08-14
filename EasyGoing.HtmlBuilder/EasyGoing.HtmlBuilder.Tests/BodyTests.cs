@@ -20,6 +20,7 @@ namespace EasyGoing.HtmlBuilder.Tests
 
             Assert.AreEqual(expected, actual);
         }
+
         [Test]
         public void AddClass_GetString_ReturnsTagWithClassAtribute()
         {
@@ -32,6 +33,7 @@ namespace EasyGoing.HtmlBuilder.Tests
             Assert.AreEqual(expected, html);
         }
 
+        [Test]
         public void AddAnoherClass_GetString_ReturnsTagWithClassAtribute()
         {
             Body b = new Body();
@@ -105,5 +107,15 @@ namespace EasyGoing.HtmlBuilder.Tests
             Assert.AreEqual(expected, html);
         }
 
+        [Test]
+        public void AddTag_GetString_RetrnTagWhithChild()
+        {
+            Body b = new Body();
+            b.AddTag("tagname");
+            string html = b.GetString();
+
+            string expected = "<body><tagname></tagname></body>";
+            Assert.AreEqual(expected, html);
+        }
     }
 }
