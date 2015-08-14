@@ -11,105 +11,105 @@ namespace EasyGoing.HtmlBuilder.Tests
     class DivTests
     {
         [Test]
-        public void CreateDiv_GetString_ReturnsEmptyTag()
+        public void CreateDiv_ToString_ReturnsEmptyTag()
         {
             Div d = new Div();
-            string html = d.GetString();
+            string html = d.ToString();
             string expected = "<div></div>";
             Assert.AreEqual(expected, html);
         }
         
         [Test]
-        public void AddClass_GetString_ReturnsTagWithClassAtribute()
+        public void AddClass_ToString_ReturnsTagWithClassAtribute()
         {
             Div d = new Div();
             d.AddClass("classname");
 
-            string html = d.GetString();
+            string html = d.ToString();
             string expected = "<div class=\"classname\"></div>";
 
             Assert.AreEqual(expected, html);
         }
 
         [Test]
-        public void AddAnoherClass_GetString_ReturnsTagWithClassAtribute()
+        public void AddAnoherClass_ToString_ReturnsTagWithClassAtribute()
         {
             Div d = new Div();
             d.AddClass("other");
 
-            string html = d.GetString();
+            string html = d.ToString();
             string expected = "<div class=\"other\"></div>";
 
             Assert.AreEqual(expected, html);
         }
 
         [Test]
-        public void AddTwoClasses_GetString_RetuwnsTagWithTwoClasses()
+        public void AddTwoClasses_ToString_RetuwnsTagWithTwoClasses()
         {
             Div d = new Div();
             d.AddClass("one");
             d.AddClass("two");
 
-            string html = d.GetString();
+            string html = d.ToString();
             string expected = "<div class=\"one two\"></div>";
             Assert.AreEqual(expected, html);
         }
 
         [Test]
-        public void AddAttribute_GetString_TagWithAttribute()
+        public void AddAttribute_ToString_TagWithAttribute()
         {
             Div d = new Div();
             d.AddAttribute("attname", "val");
-            string html = d.GetString();
+            string html = d.ToString();
 
             string expected = "<div attname=\"val\"></div>";
             Assert.AreEqual(expected, html);
         }
 
         [Test]
-        public void AddTWoAttributes_GetString_TagWithAttributes()
+        public void AddTWoAttributes_ToString_TagWithAttributes()
         {
             Div d = new Div();
             d.AddAttribute("first", "val1");
             d.AddAttribute("second", "val2");
-            string html = d.GetString();
+            string html = d.ToString();
 
             string expected = "<div first=\"val1\" second=\"val2\"></div>";
             Assert.AreEqual(expected, html);
         }
 
         [Test]
-        public void AddClassAddAttribute_GetString_TagWithClassesAndAttributes()
+        public void AddClassAddAttribute_ToString_TagWithClassesAndAttributes()
         {
             Div d = new Div();
             d.AddClass("one");
             d.AddAttribute("first", "val1");
-            string html = d.GetString();
+            string html = d.ToString();
 
             string expected = "<div class=\"one\" first=\"val1\"></div>";
             Assert.AreEqual(expected, html);
         }
 
         [Test]
-        public void AddTwoClassAddTwoAttribute_GetString_TagWithClassAndAttribute()
+        public void AddTwoClassAddTwoAttribute_ToString_TagWithClassAndAttribute()
         {
             Div d = new Div();
             d.AddClass("one");
             d.AddClass("two");
             d.AddAttribute("first", "val1");
             d.AddAttribute("second", "val2");
-            string html = d.GetString();
+            string html = d.ToString();
 
             string expected = "<div class=\"one two\" first=\"val1\" second=\"val2\"></div>";
             Assert.AreEqual(expected, html);
         }
 
         [Test]
-        public void AddTag_GetString_RetrnTagWhithChild()
+        public void AddTag_ToString_RetrnTagWhithChild()
         {
             Div d = new Div();
             d.AddTag("tagname");
-            string html = d.GetString();
+            string html = d.ToString();
 
             string expected = "<div><tagname></tagname></div>";
             Assert.AreEqual(expected, html);

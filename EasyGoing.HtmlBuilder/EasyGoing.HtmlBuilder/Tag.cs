@@ -35,7 +35,7 @@ namespace EasyGoing.HtmlBuilder
             _attributes.Add(attname, val);
         }
 
-        public string GetString()
+        public override string ToString()
         {
             string result = "<" + Name;
             if (_classNames.Count > 0)

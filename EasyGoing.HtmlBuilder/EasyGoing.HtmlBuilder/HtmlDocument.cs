@@ -18,7 +18,7 @@ namespace EasyGoing.HtmlBuilder
             StringBuilder sb = new StringBuilder(@"<!DOCTYPE html><html>");
 
             Head.AppendTo(sb);
-            sb.Append(Body.GetString() + "</html>");
+            sb.Append(Body.ToString() + "</html>");
 
             return sb.ToString();
         }
