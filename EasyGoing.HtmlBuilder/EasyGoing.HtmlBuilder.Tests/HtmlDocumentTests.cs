@@ -16,7 +16,7 @@ namespace EasyGoing.HtmlBuilder.Test
             var doc = new HtmlDocument();
 
             string html = doc.ToString();
-            string expected = @"<!DOCTYPE html><html><head><title>Html Builder</title></head><body></body></html>";
+            string expected = @"<!DOCTYPE html><html><head></head><body></body></html>";
 
             Assert.AreEqual(expected, html);
         }
@@ -39,14 +39,14 @@ namespace EasyGoing.HtmlBuilder.Test
 
             Assert.IsInstanceOf<Body>(body);
         }
+
         [Test]
         public void BodyChanged_GetString_ReturnsCorrectHtml()
         {
-
             var doc = new HtmlDocument();
             doc.Body.AddClass("one");
             string html = doc.ToString();
-            string expected = @"<!DOCTYPE html><html><head><title>Html Builder</title></head><body class=""one""></body></html>";
+            string expected = @"<!DOCTYPE html><html><head></head><body class=""one""></body></html>";
 
             Assert.AreEqual(expected, html);
         }

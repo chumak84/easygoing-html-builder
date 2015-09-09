@@ -7,6 +7,7 @@ namespace EasyGoing.HtmlBuilder
     {
         public Body():base("body")
         {
+
         }
     }
 }

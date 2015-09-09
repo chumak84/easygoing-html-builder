@@ -34,8 +34,7 @@ namespace EasyGoing.HtmlBuilder.Tests
         }
 
         [Test]
-        public void AddAnoherClass_ToString_ReturnsTagWithClassAtribute()
-        {
+        public void AddAnoherClass_ToString_ReturnsTagWithClassAtribute()     {
             Body b = new Body();
             b.AddClass("other");
 

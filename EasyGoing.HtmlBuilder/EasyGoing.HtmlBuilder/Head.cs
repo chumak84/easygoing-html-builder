@@ -5,15 +5,25 @@ namespace EasyGoing.HtmlBuilder
 {
     public class Head
     {
-        public string Title { get; set; } = "Html Builder";
+        public string Title { get; set; } = "";
 
-        internal void AppendTo(StringBuilder sb)
+        public void AppendTo(StringBuilder sb)
         {
-            sb.AppendFormat("<head><title>{0}</title></head>", Title);
+            sb.Append("<head>");
+            if(!string.IsNullOrWhiteSpace(Title))
+            {
+                sb.AppendFormat("<title>{0}</title>", Title);
+            }
+            sb.Append("</head>");
         }
-        public string GetString()
+        public override string ToString()
         {
-            return "<head></head>";
+            StringBuilder sb = new StringBuilder();
+
+            this.AppendTo(sb);
+
+            string result = sb.ToString();
+            return result;
         }
     }
 }

@@ -37,19 +37,20 @@ namespace EasyGoing.HtmlBuilder
 
         public override string ToString()
         {
-            string result = "<" + Name;
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("<{0}", Name);
             if (_classNames.Count > 0)
             {
                 string name = string.Join(" ", _classNames);
-                result += " class=\"" + name + "\"";
+                sb.AppendFormat (" class=\"{0}\"", name);
             }
             if (_attributes.Count > 0)
             {
                 foreach (KeyValuePair<string, string> p in _attributes)
                 {
-                    result += " " + p.Key;
-                    result += "=\"";
-                    result += p.Value + "\"";
+                    sb.AppendFormat(" {0}", p.Key);
+                    sb.AppendFormat("=\"");
+                    sb.AppendFormat("{0}\"", p.Value);
                 }
             }
             if (_tags.Count > 0)
@@ -57,11 +58,11 @@ namespace EasyGoing.HtmlBuilder
                 foreach (Tag t in _tags)
                 {
                     string name = t.Name;
-                    result += "><" + name + "></" + name;
+                    sb.AppendFormat ("><{0}></{0}", name);
                 }
             }
-            result += "></" + Name + ">";
-            return result;
+            sb.AppendFormat("></{0}>", Name);
+            return sb.ToString();
         }
 
     }
