@@ -16,39 +16,18 @@ namespace EasyGoing.HtmlBuilder.Test
             var doc = new HtmlDocument();
 
             string html = doc.ToString();
-            string expected = @"<!DOCTYPE html><html><head></head><body></body></html>";
+            string expected = @"<!DOCTYPE html><html lang=""en""><head></head><body></body></html>";
 
             Assert.AreEqual(expected, html);
         }
 
         [Test]
-        public void Head_ReturnsHeadObject()
+        public void Html_ReturnsHtmlObject()
         {
             var doc = new HtmlDocument();
-            var head = doc.Head;
+            var html = doc.Html;
             
-            Assert.IsInstanceOf<Head>(head);
-        }
-
-        [Test]
-        public void Body_ReturnsBodyObject()
-        {
-            var doc = new HtmlDocument();
-
-            Body body = doc.Body;
-
-            Assert.IsInstanceOf<Body>(body);
-        }
-
-        [Test]
-        public void BodyChanged_GetString_ReturnsCorrectHtml()
-        {
-            var doc = new HtmlDocument();
-            doc.Body.AddClass("one");
-            string html = doc.ToString();
-            string expected = @"<!DOCTYPE html><html><head></head><body class=""one""></body></html>";
-
-            Assert.AreEqual(expected, html);
+            Assert.IsInstanceOf<Html>(html);
         }
     }
 }

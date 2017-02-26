@@ -8,17 +8,27 @@ namespace EasyGoing.HtmlBuilder
 {
     public class HtmlDocument
     {
-        Head _head = new Head();
+        private Html _html;
 
-        public Body Body { get; } = new Body();
-        public Head Head { get; } = new Head();
+        public Html Html
+        {
+            get
+            {
+                if (_html == null)
+                    _html = new Html();
+                return _html;
+            }
+            set
+            {
+                _html = value;
+            }
+        }
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder(@"<!DOCTYPE html><html>");
+            StringBuilder sb = new StringBuilder(@"<!DOCTYPE html>");
 
-            Head.AppendTo(sb);
-            sb.Append(Body.ToString() + "</html>");
+            sb.Append(Html.ToString());
 
             return sb.ToString();
         }
